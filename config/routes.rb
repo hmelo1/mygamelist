@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'gamelist/index'
+  get 'gamelist/new'
+  get 'gamelist/create'
+  get 'gamelist/description'
+  get 'gamelist/screenshot_upload'
+  get 'gamelist/update'
+  get 'game/show'
   root 'pages#home'
   
   devise_for :users,
