@@ -14,13 +14,8 @@ class GamelistsController < ApplicationController
     @gamelist = current_user.gamelists.build(list_params)
   end
 
-  def description
-  end
+  def show
 
-  def screenshot_upload
-  end
-
-  def update
   end
 
   private
