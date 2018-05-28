@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  user: one
+  progress: MyString
+  start_date: 2018-05-28 15:01:11
+  end_date: 2018-05-28 15:01:11
+  days: 1
+  personal_rating: 1
+
+two:
+  game: two
+  user: two
+  progress: MyString
+  start_date: 2018-05-28 15:01:11
+  end_date: 2018-05-28 15:01:11
+  days: 1
+  personal_rating: 1
