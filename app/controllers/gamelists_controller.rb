@@ -7,11 +7,11 @@ class GamelistsController < ApplicationController
   end
 
   def new
-    @gamelist = current_user.gamelists.build
+    @lists = current_user.gamelists.build
   end
 
   def create
-    @gamelist = current_user.gamelists.build(list_params)
+    @lists = current_user.gamelists.build(list_params)
   end
 
   def show
@@ -21,7 +21,7 @@ class GamelistsController < ApplicationController
   private
 
   def set_gamelist
-    @list = Room.find(params[:id])
+    @list = Game.find(params[:id])
   end
 
   def list_params

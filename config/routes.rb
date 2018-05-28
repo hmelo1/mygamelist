@@ -6,10 +6,10 @@ Rails.application.routes.draw do
                       path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'}
 
     resources :users, only: [:show] do
-      resources :gamelist
+      resources :gamelists
     end
     resources :games, only: [:show, :index]
-    resources :gamelist
+    resources :gamelists
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
