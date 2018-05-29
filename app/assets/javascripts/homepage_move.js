@@ -1,11 +1,14 @@
 $(function(){
   $(".js-prev-games").on("click", function(event){
-    alert("TESTING")
+    event.preventDefault();
+    $.get( "/", function(data){
+      debugger
+    })
   })
 })
 
 $(function(){
   $(".js-next-games").on("click", function(event){
-    alert("TESTING")
+    event.preventDefault();
   })
 })
