@@ -8,7 +8,6 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-3">
-      <!-- button to remove in AJAX -->
       <%= link_to root_url + "gamelists/" + game.id.to_s, method: :delete, data: {confirm: "Are you sure?"} do%>
         <i class="fa fa-trash-o" aria-hidden="true"></i>
       <% end %>
