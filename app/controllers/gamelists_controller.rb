@@ -20,7 +20,7 @@ class GamelistsController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        format.html {redirect_to root_url + "gamelist", notice: 'Added to gamelist.'}
+        format.html {redirect_to root_url + "gamelists", notice: 'Added to gamelist.'}
         format.json {render :show, status: :created, location: @game}
       else
         format.html {render :new}
@@ -32,10 +32,7 @@ class GamelistsController < ApplicationController
   def deletegame
     @game = Gamelist.find_by id: params[:id]
     @game.destroy
-    respond_to do |format|
-      format.html {redirect_to root_url + "gamelists", notice: "Game removed from list."}
-      format.json {head :no_content}
-    end
+    respond_to :js
   end
 
   def show
