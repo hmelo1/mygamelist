@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @games = Game.all
+    @games = Game.randThree
   end
 end
