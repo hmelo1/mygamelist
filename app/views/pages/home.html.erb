@@ -1,3 +1,11 @@
-<% @games.each do |game| %>
-  <%= game.title %>
-<% end %>
+<div class="row">
+  <a href ="#" class="js-prev-games btn btn-secondary" style ="float: left; font-size: 3em; color: Black">
+    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i> </a>
+  <a href ="#" class="js-next-games btn btn-secondary" style ="float: right; font-size: 3em; color: Black">
+    <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </a>
+  <% @games.each do |game| %>
+  <div class="col-md-3">
+    <%= game.title %>
+  </div>
+  <% end %>
+</div>
