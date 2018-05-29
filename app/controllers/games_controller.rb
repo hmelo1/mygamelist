@@ -9,7 +9,10 @@ class GamesController < ApplicationController
 
   def prev
     @game = Game.find(params[:id])
-    binding.pry
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @game}
+    end
   end
 
   def next

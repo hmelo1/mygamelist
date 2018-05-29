@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   post 'gamelists/:id' => 'gamelists#addgame'
   delete 'gamelists/:id' => 'gamelists#deletegame'
-  get 'games/:id/next', to: 'games#next'
-  get 'games/:id/prev', to: 'games#prev'
+  get '/games/:id/next', to: 'games#next'
+  get '/games/:id/prev', to: 'games#prev'
   resources :gamelists
   resources :users, only: [:show]
   resources :games, only: [:show, :index]
