@@ -1,6 +1,6 @@
 class GamelistsController < ApplicationController
 
-  before_action :set_gamelist, except: [:index, :new, :create]
+  before_action :set_gamelist, except: [:index, :new, :create, :deletegame]
 
   def index
     @list = Gamelist.where user_id: current_user.id
@@ -32,7 +32,10 @@ class GamelistsController < ApplicationController
   def deletegame
     @game = Gamelist.find_by id: params[:id]
     @game.destroy
-    respond_to :js
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render: }
+    end
   end
 
   def show
