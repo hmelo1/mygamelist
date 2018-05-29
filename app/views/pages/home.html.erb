@@ -5,7 +5,11 @@
     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </a>
   <% @games.each do |game| %>
   <div class="col-md-3 text-center">
-    <%= game.title %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= game.title %>
+        </div>
+    </div>
   </div>
   <% end %>
 </div>
