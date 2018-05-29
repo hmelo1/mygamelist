@@ -31,10 +31,12 @@ class GamelistsController < ApplicationController
 
   def deletegame
     @game = Gamelist.find_by id: params[:id]
+    @list = @game.user.gamelists
     @game.destroy
+
     respond_to do |format|
-      format.html {render :index}
-      format.json {render: }
+      format.html {redirect_to root_url + "gamelists", notice: "Game removed."}
+      format.json {render :index, status: :deleted}
     end
   end
 

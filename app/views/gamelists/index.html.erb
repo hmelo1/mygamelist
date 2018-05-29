@@ -4,9 +4,9 @@
       <h2>Your Game List</h2>
     </div>
     <div class="panel-body">
-      <% @list.each do |game| %>
-        <%= render partial: 'games', locals: {game: game} %>
-      <% end %>
+      <div id="games">
+            <%= render partial: 'gamelisting'%>
+      </div>
     </div>
   </div>
 </div>
