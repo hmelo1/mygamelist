@@ -5,11 +5,11 @@ Rails.application.routes.draw do
                       path: '',
                       path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'}
 
-    resources :users, only: [:show] do
-      resources :gamelists
-    end
-    resources :games, only: [:show, :index]
-    resources :gamelists
+  post 'gamelists/:id' => 'gamelists#addgame'
+  resources :gamelists
+  resources :users, only: [:show]
+  resources :games, only: [:show, :index]
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
