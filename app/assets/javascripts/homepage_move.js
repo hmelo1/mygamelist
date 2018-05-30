@@ -41,8 +41,10 @@ $(function(){
       url: this.action,
       data: $(this).serialize(),
       success: function(response){
+          debugger;
+        eval(response)
         let comment = new Comment(response);
-        debugger;
+
         comment.renderComments();
         $(".commentBox").val("");
       }
@@ -54,4 +56,10 @@ function Comment(data){
   this.id = data.id;
   this.content = data.conent;
   this.user = data.user;
+}
+
+Comment.prototype.renderComments = function(){
+  let html = "";
+  html += `>div class="panel-body"> ${this.conent} `
+  $("submitted-comments").append(html)
 }

@@ -13,8 +13,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.game_id = get_game_id
     @comment.user_id = current_user.id
+    @comment.email = current_user.email
+    binding.pry
     if @comment.save!
-      redirect_to game_url(@comment.game_id), notice: 'Successfully Commented!'
+      render json: @comment, status: 201
     else
       render :new
     end
