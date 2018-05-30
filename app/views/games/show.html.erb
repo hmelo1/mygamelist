@@ -27,13 +27,15 @@
       </div>
 
         <br>
-        <% @comments.each do |comment| %>
-              <div class="panel-body">
-          <%= comment.content %><br>
-          <strong>By: <%= comment.username %></strong>
-          <br>
+        <div class="submitted-comments">
+          <% @comments.each do |comment| %>
+                <div class="panel-body">
+            <%= comment.content %><br>
+            <strong>By: <%= comment.username %></strong>
         </div>
+
         <% end %>
+        </div>
     </div>
   </div>
 </div>
