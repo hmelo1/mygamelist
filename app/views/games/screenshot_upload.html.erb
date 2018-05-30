@@ -8,8 +8,20 @@
         Screenshots
       </div>
       <div class="panel-body">
-          
-
+        <%= form_for @game, url: game_screenshots_path(@game), method: 'post', html: {multipart: true} do |f| %>
+          <div class="row">
+            <div class="form-group">
+              <span class="btn btn-default btn-file text-babu">
+                Select Screenshots
+                <%= file_field_tag "images[]", type: :file, multiple: true %>
+              </span>
+            </div>
+          </div>
+          <div class="text-center">
+            <br>
+            <%= f.submit "Add screenshots", class: "btn btn-form" %>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>
