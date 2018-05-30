@@ -41,12 +41,11 @@ $(function(){
       url: this.action,
       data: $(this).serialize(),
       success: function(response){
-          debugger;
-        eval(response)
         let comment = new Comment(response);
-
         comment.renderComments();
         $(".commentBox").val("");
+        $("input.btn.btn").removeAttr('data-disable-with')
+        $("input.btn.btn").prop('disabled', false)
       }
     })
   })
@@ -54,12 +53,14 @@ $(function(){
 
 function Comment(data){
   this.id = data.id;
-  this.content = data.conent;
-  this.user = data.user;
+  this.content = data.content;
+  this.email = data.email;
 }
 
 Comment.prototype.renderComments = function(){
   let html = "";
-  html += `>div class="panel-body"> ${this.conent} `
-  $("submitted-comments").append(html)
+  html += `
+    <div class="panel-body"> ${this.content}<br>
+    <strong> By: ${this.email} </strong>`
+  $(".submitted-comments").append(html)
 }

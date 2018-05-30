@@ -14,9 +14,8 @@ class CommentsController < ApplicationController
     @comment.game_id = get_game_id
     @comment.user_id = current_user.id
     @comment.email = current_user.email
-    binding.pry
     if @comment.save!
-      render json: @comment, status: 201
+      render json: @comment, :methods => :email
     else
       render :new
     end
