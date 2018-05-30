@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @games = Game.randThree
+    @games = Game.all
     respond_to do |format|
       format.html {render :home}
       format.json {render json: @games}
