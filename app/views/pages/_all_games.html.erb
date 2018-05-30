@@ -2,7 +2,7 @@
 <div class="col-md-3 text-center">
   <div class="panel panel-default">
       <div class="panel-heading">
-        <%= game.title %>
+        <%= link_to game.title, game_path(game.id), class: "home_page_text"  %>
       </div>
   </div>
 </div>
