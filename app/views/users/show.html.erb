@@ -24,3 +24,22 @@
       </div>
   </div>
 </div>
+
+<div class="col-md-12">
+  <br>
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading text-center">
+        <h2>Comments You've Posted</h2>
+      </div>
+        <br>
+        <% @comments.each do |comment| %>
+              <div class="panel-body">
+          <%= comment.content %><br>
+          <strong>By: <%= comment.username %></strong>
+          <br>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>
