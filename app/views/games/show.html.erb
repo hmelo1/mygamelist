@@ -25,14 +25,15 @@
           <% end %>
         <% end %>
       </div>
-      <div class="panel-body">
+
         <br>
         <% @comments.each do |comment| %>
-          <%= comment.content %>
-          By: <%= comment.username %>
+              <div class="panel-body">
+          <%= comment.content %><br>
+          <strong>By: <%= comment.username %></strong>
           <br>
+        </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>
