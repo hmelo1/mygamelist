@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get '/games/:id/prev', to: 'games#prev'
   resources :gamelists
   resources :users, only: [:show]
-  resources :games, only: [:show, :index]
+  resources :games, only: [:show, :index] do
+    resources :screenshots, only: [:create, :destroy]
+  end
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
