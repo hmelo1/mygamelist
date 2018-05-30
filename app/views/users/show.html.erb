@@ -5,18 +5,22 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        Verification
+        User
       </div>
       <div class="panel-body">
-        Email Address<br/>
-        Location
+        <strong>Email Address<br/></strong>
+        <%= @user.email %>
+        <strong>Location</strong>
       </div>
     </div>
   </div>
   <div class="col-md-9">
-    <h2><%= @user.email %></h2>
-    <div class="description row-space-3">
-      <%= @user.description %>
-    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading text-center">
+        <h2><%= @user.email %></h2>
+      </div>
+      <div class="panel-body">
+        <%= @user.description %>
+      </div>
   </div>
 </div>
