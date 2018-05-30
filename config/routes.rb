@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   delete 'gamelists/:id' => 'gamelists#deletegame'
   get '/games/:id/next', to: 'games#next'
   get '/games/:id/prev', to: 'games#prev'
+  get '/games/:id/screenshot_upload', to: "games#screenshot_upload"
   resources :gamelists
   resources :users, only: [:show]
-  resources :games, only: [:show, :index, :screenshot_upload] do
+  resources :games, only: [:show, :index] do
     resources :screenshots, only: [:create, :destroy]
   end
 
