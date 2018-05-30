@@ -1,28 +1,5 @@
 <div class="row">
-  <div class="col-md-3">
-    <div class="center">
-      <!-- game image -->
-        <%= form_tag root_url + "gamelists/" +@game.id.to_s do %>
-        <div><%=submit_tag "Add to Gamelist", class: "btn btn-primary btn-block" %></div>
-        <% end %>
-    </div>
-    <!-- side panel -->
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Information
-      </div>
-      <div class="panel-body">
-        <strong> Title: </strong>
-          <div class="title"><%= @game.title %><br></div>
-        <strong> Platforms: </strong>
-        <div class="platform"><%= @game.platforms %><br></div>
-        <strong> Release Year: </strong>
-        <div class="release_year"><%= @game.release_year %><br></div>
-        <strong> Genre: </strong>
-        <div class="genre"><%= @game.genre %><br></div>
-      </div>
-    </div>
-  </div>
+<%= render partial: "games_menu" %>
 <!-- middle panel -->
   <div class="col-md-9" data-id="<%= "#{params[:id]}"%>">
     <a href ="#" class="js-prev-games btn btn-secondary" style ="float: left; font-size: 3em; color: Black">

@@ -1,0 +1,25 @@
+<div class="col-md-3">
+  <div class="center">
+    <!-- game image -->
+      <%= form_tag root_url + "gamelists/" +@game.id.to_s do %>
+      <div><%=submit_tag "Add to Gamelist", class: "btn btn-primary btn-block" %></div>
+      <% end %>
+  </div>
+  <!-- side panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Information
+    </div>
+    <div class="panel-body">
+      <strong> Title: </strong>
+        <div class="title"><%= @game.title %><br></div>
+      <strong> Platforms: </strong>
+      <div class="platform"><%= @game.platforms %><br></div>
+      <strong> Release Year: </strong>
+      <div class="release_year"><%= @game.release_year %><br></div>
+      <strong> Genre: </strong>
+      <div class="genre"><%= @game.genre %><br></div>
+      <div class="screenshots"><%= link_to "Upload and view screenshots", screenshot_upload_path, class: "btn btn-default btn-block" %></div>
+    </div>
+  </div>
+</div>
