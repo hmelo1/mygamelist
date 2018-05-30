@@ -6,10 +6,10 @@ class ScreenshotsController < ApplicationController
       params[:images].each do |img|
         @game.screenshots.create(image: img)
       end
-      @screenshots = @game.photos
+      @screenshots = @game.screenshots
       redirect_back(fallback_location: request.referer, notice: "Saved")
     end
 
-    
+
   end
 end
