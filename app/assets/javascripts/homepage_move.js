@@ -2,6 +2,7 @@ $(function(){
   $(".js-prev-games").on("click", function(event){
     event.preventDefault();
     var id = parseInt($(".col-md-9").attr("data-id"))-1
+    $(".submitted-comments").empty();
     $.get("/games/" + id + "/prev.json", function(data){
       let game = data.game;
       $("a.btn.btn-default.btn-block").attr('href', "/games/" + game.id + "/screenshot_upload")
@@ -20,15 +21,12 @@ $(function(){
     })
   })
 })
-/*      comments.each(function(new_comment){
-        var comment = new Comment(new_comment)
-        comment.renderComments();
-      })
-      */
+
 $(function(){
   $(".js-next-games").on("click", function(event){
     event.preventDefault();
-    var id = parseInt($(".col-md-9").attr("data-id"))+1
+    var id = parseInt($(".col-md-9").attr("data-id"))+1;
+    $(".submitted-comments").empty();
     $.get("/games/" + id + "/next.json", function(data){
       let game = data.game;
       $("a.btn.btn-default.btn-block").attr('href', "/games/" + game.id + "/screenshot_upload")
