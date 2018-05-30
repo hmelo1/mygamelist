@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
-    @comments = Comment.where(game_id: params[:id])
+    @comments = @game.comments
+    @comment = Comment.new
   end
 
   def index

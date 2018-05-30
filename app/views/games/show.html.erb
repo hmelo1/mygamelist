@@ -10,4 +10,29 @@
   </div>
 </div>
 
-<%= render partial: "comments/comments_sec" %>
+<div class="col-md-12">
+  <br>
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>Comments Section:</h2>
+      </div>
+      <div class="panel-body">
+        <% if user_signed_in? %>
+            <%= form_for ([@game, @comment]) do |f|%>
+            <%= f.text_area :content, rows: 5, class: 'form-control' %>
+            <%= f.submit 'New Comment', class: "btn btn-default btn-lg" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="panel-body">
+        <br>
+        <% @comments.each do |comment| %>
+          <%= comment.content %>
+          By: <%= comment.username %>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
