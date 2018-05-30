@@ -20,9 +20,10 @@ class GamesController < ApplicationController
 
   def next
     @game = Game.find(params[:id])
+    @comments = @game.comments
     respond_to do |format|
       format.html {render :show}
-      format.json {render json: @game}
+      format.json {render json: {game: @game, comments: @comments}}
     end
   end
 
