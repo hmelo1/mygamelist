@@ -9,3 +9,16 @@
       <%= render partial: "game_panel" %>
   </div>
 </div>
+
+<br>
+<h2>Comments Section:</h2>
+
+<% if user_signed_in? %>
+      <%= link_to 'New Comment', new_plan_comment_url(@plan), class: "btn btn-default btn-lg" %>
+<% end %>
+<br>
+<% @comments.each do |comment| %>
+  <%= comment.text %>
+  By: <%= comment.username %>
+  <br>
+<% end %>
