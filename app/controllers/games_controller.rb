@@ -22,4 +22,9 @@ class GamesController < ApplicationController
       format.json {render json: @game}
     end
   end
+
+  def screenshot_upload
+    @game = Game.find(params[:id])
+    @screenshots = @game.screenshots
+  end
 end

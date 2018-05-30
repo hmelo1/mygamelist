@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/games/:id/prev', to: 'games#prev'
   resources :gamelists
   resources :users, only: [:show]
-  resources :games, only: [:show, :index] do
+  resources :games, only: [:show, :index, :screenshot_upload] do
     resources :screenshots, only: [:create, :destroy]
   end
 
