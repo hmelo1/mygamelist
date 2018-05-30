@@ -15,6 +15,7 @@ $(function(){
   })
 })
 
+
 $(function(){
   $(".js-next-games").on("click", function(event){
     event.preventDefault();
@@ -31,3 +32,26 @@ $(function(){
     })
   })
 })
+
+$(function(){
+  $("#new_comment").on("submit", function(event){
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: this.action,
+      data: $(this).serialize(),
+      success: function(response){
+        let comment = new Comment(response);
+        debugger;
+        comment.renderComments();
+        $(".commentBox").val("");
+      }
+    })
+  })
+})
+
+function Comment(data){
+  this.id = data.id;
+  this.content = data.conent;
+  this.user = data.user;
+}

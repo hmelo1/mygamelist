@@ -20,7 +20,7 @@
       <div class="panel-body">
         <% if user_signed_in? %>
             <%= form_for ([@game, @comment]) do |f|%>
-            <%= f.text_area :content, rows: 5, class: 'form-control' %>
+            <%= f.text_area :content, rows: 5, class: 'commentBox form-control' %>
             <%= f.submit 'New Comment', class: "btn btn-default btn-lg" %>
           <% end %>
         <% end %>
