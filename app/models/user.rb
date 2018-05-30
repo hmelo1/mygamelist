@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :gamelists
   has_many :games, through: :gamelists
+  has_many :comments
 end
