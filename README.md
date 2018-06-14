@@ -16,7 +16,7 @@ This is a personal project built by Heriberto Melo.
 
 * Browse games, add to lists and comment
 
-* Upload screenshots to AWS to cloud storage
+* (Temporarily removed) Upload screenshots to AWS to cloud storage
 
 * Chat with other users!
 
@@ -37,3 +37,7 @@ MyGameList utilizes bootstrap, jquery and Ajax to deliver the frontend, giving u
 * PaperClip
 * Boostrap
 * Jquery Rails
+
+### Future Features
+
+* Integration with GiantBomb API for more games on the list.
