@@ -1,24 +1,31 @@
-# README
+# MYGAMELIST
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Live Demo
 
-Things you may want to cover:
+< Heroku >
 
-* Ruby version
+### Desription
 
-* System dependencies
+MyGameList is a web application inspired by MyAnimelist. MyGameList is a platform that allows users to add games to their list and upload personal screenshots to our database.
 
-* Configuration
+This is a personal project built by Heriberto Melo.
 
-* Database creation
+### Features
 
-* Database initialization
+* User Accounts with secure authentication
 
-* How to run the test suite
+* Browse games, add to lists and comment
 
-* Services (job queues, cache servers, search engines, etc.)
+* Upload screenshots to AWS to cloud storage
 
-* Deployment instructions
+* Chat with other users!
 
-* ...
+### Technology
+
+#### Backend
+
+MyGameList runs on Ruby on Rails and is hosted on Heroku. The backend provides RESTful APIs and responds to the frontend requests with JSON data.
+
+#### Frontend
+
+MyGameList utilizes bootstrap, jquery and Ajax to deliver the frontend, giving us a beautiful app.
