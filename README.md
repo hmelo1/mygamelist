@@ -29,3 +29,11 @@ MyGameList runs on Ruby on Rails and is hosted on Heroku. The backend provides R
 #### Frontend
 
 MyGameList utilizes bootstrap, jquery and Ajax to deliver the frontend, giving us a beautiful app.
+
+#### Gems Used
+
+* Devise
+* Toastr
+* PaperClip
+* Boostrap
+* Jquery Rails
