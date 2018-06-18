@@ -19,7 +19,7 @@ class GamesController < ApplicationController
     end
     respond_to do |format|
       format.html {render :show}
-      format.json {render json: {game: @game, comments: @comments.as_json(methods: :email)}}
+      format.json {render json: {game: @game.as_json(:include => {:comments => {:methods => :email}})}}
     end
   end
 
@@ -31,7 +31,7 @@ class GamesController < ApplicationController
     end
     respond_to do |format|
       format.html {render :show}
-      format.json {render json: {game: @game, comments: @comments.as_json(methods: :email)}}
+      format.json {render json: {game: @game.as_json(:include => {:comments => {:methods => :email}})}}
     end
   end
 
